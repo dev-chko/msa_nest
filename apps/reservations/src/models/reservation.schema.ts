@@ -12,7 +12,7 @@ export class ReservationDocument extends AbstractDocument {
   @Prop()
   userId: string;
   @Prop()
-  invoiceId: string;
+  invocieId: string;
   @Prop()
   placeId: string;
 }
