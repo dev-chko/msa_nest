@@ -13,8 +13,6 @@ export class ReservationDocument extends AbstractDocument {
   userId: string;
   @Prop()
   invocieId: string;
-  @Prop()
-  placeId: string;
 }
 
 export const ReservationSchema =
