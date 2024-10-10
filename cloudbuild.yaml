@@ -70,3 +70,5 @@ steps:
         'push',
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production',
       ]
+options:
+  logging: CLOUD_LOGGING_ONLY # 로그를 Cloud Logging에만 저장
