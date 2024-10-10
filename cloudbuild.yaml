@@ -10,10 +10,8 @@ steps:
       'apps/reservations/Dockerfile'
     ]
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-    ['push','asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/reservations/production']
+    args: ['push', 'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/reservations/production']
     
-
   # Auth
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -25,9 +23,7 @@ steps:
       'apps/auth/Dockerfile'
     ]
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-    ['push','asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/auth/production']
-
+    args: ['push', 'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/auth/production']
 
   # Payments
   - name: 'gcr.io/cloud-builders/docker'
@@ -40,9 +36,7 @@ steps:
       'apps/payments/Dockerfile'
     ]
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-    ['push','asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production']
-
+    args: ['push', 'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production']
 
   # Notifications
   - name: 'gcr.io/cloud-builders/docker'
@@ -55,5 +49,4 @@ steps:
       'apps/notifications/Dockerfile'
     ]
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-    ['push','asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/notifications/production']
+    args: ['push', 'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/notifications/production']
