@@ -8,6 +8,7 @@ steps:
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/reservations/production',
         '-f',
         'apps/reservations/Dockerfile',
+        '.',
       ]
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -25,29 +26,13 @@ steps:
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/auth/production',
         '-f',
         'apps/auth/Dockerfile',
+        '.',
       ]
   - name: 'gcr.io/cloud-builders/docker'
     args:
       [
         'push',
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/auth/production',
-      ]
-
-  # Payments
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      [
-        'build',
-        '-t',
-        'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production',
-        '-f',
-        'apps/payments/Dockerfile',
-      ]
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      [
-        'push',
-        'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production',
       ]
 
   # Notifications
@@ -59,6 +44,7 @@ steps:
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/notifications/production',
         '-f',
         'apps/notifications/Dockerfile',
+        '.',
       ]
   - name: 'gcr.io/cloud-builders/docker'
     args:
@@ -66,5 +52,21 @@ steps:
         'push',
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/notifications/production',
       ]
-options:
-  logging: CLOUD_LOGGING_ONLY # 로그를 Cloud Logging에만 저장
+
+  # Payments
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production',
+        '-f',
+        'apps/payments/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/payments/production',
+      ]
