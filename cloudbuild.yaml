@@ -66,3 +66,5 @@ steps:
         'push',
         'asia-northeast3-docker.pkg.dev/sylvan-ocean-437806-v2/notifications/production',
       ]
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
